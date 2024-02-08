@@ -14,14 +14,14 @@ See all of the prototypes for the challenge [here](https://twitter.com/whichligh
 
 ## Run
 
-1 . run `listen.py` to get the voice to text for prompts
+1. run `listen.py` to get the voice to text for prompts
 
-2.  then run `see.py` to take regular snapshots from the cam
+2. then run `see.py` to take regular snapshots from the cam
 
-3.  then run `run_lcm_fal.py` to loop taking the prompt and the image and running LCM, saving the image link to a txt file
+3. then run `run_lcm_fal.py` to loop taking the prompt and the image and running LCM, saving the image link to a txt file
 
-4.  use something like Photobooth to see what's on the webcam
+4. use something like Photobooth to see what's on the webcam
 
-5.  Run server.py to see the image
+5. Run server.py to see the image
 
 There's a ton of latency, so the next thing to do here is rewrite it in the browser, which fal is great for.
