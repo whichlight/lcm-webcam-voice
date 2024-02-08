@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Display</title>
+</head>
+<body>
+    {% if image_url %}
+        <img id="outputImage" src="{{ image_url }}" alt="Output Image">
+    {% else %}
+        <p>No image available.</p>
+    {% endif %}
+
+    <script>
+        function fetchAndUpdateImage() {
+            fetch('/latest-image-url')
+                .then(response => response.json())
+                .then(data => {
+                    const imageUrl = data.image_url;
+                    if (imageUrl) {
+                        document.getElementById('outputImage').src = imageUrl;
+                    }
+                })
+                .catch(error => console.error('Error fetching new image:', error));
+        }
+
+        setInterval(fetchAndUpdateImage, 100);
+    </script>
+</body>
+</html>
